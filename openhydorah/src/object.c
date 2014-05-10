@@ -154,7 +154,7 @@ Object* CreateObjectFromJSON(json_t* root, SDL_Point point, TextureList** textur
 	json_t* spriteJSON = NULL;
 	json_t* collisionJSON = NULL;
 
-	char* name = NULL;
+	const char* name = NULL;
 	Object* obj = NULL;
 	Sprite* sprite = NULL;
 	Object* children = NULL;
@@ -163,9 +163,7 @@ Object* CreateObjectFromJSON(json_t* root, SDL_Point point, TextureList** textur
 	nameJSON = json_object_get(root, "name");
 	if (json_is_string(nameJSON))
 	{
-		const char* val = json_string_value(nameJSON);
-		name = malloc(strlen(val) + 1);
-		strcpy(name, val);
+		name = json_string_value(nameJSON);
 	}
 
 	spriteJSON = json_object_get(root, "sprite");
