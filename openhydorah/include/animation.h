@@ -7,6 +7,7 @@
 
 #include "frame.h"
 #include <stdint.h>
+#include <jansson.h>
 
 struct animation {
 	char *name;

@@ -2,6 +2,8 @@
 #include "property.h"
 #include <stdio.h>
 
+#undef main
+
 int main(int argc, const char *argv[])
 {
 	struct engine *engine = engine_create();
